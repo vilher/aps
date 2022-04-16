@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+#navbar-name{
+    float:left;
+    }
+.topnav a {
+    float: right;
+        color: black;
+        padding: 0px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        
+      }
+      
+ .topnav a:hover {
+        color: rgb(83, 160, 201);
+        
+      }
+  
+.top-container{ 
+    margin: 0px;
+    padding: 30px;
+    padding-bottom: 40px;
+}
+.middle-container{
+    margin: 0px;
+    background-color: #FFF6EA;
+    padding: 20px;
+}
+.bottom-container{
+    margin: 0px;
+    background-color: #EBD8C3;
+    padding: 10px;
+}
+hr{ 
+    border-style: solid; 
+    border-color: #8c8b8b; 
+    border-width: 1px 0 0 0; 
+}
