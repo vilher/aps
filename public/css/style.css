@@ -25,16 +25,22 @@ body{
 }
 .middle-container{
     margin: 0px;
-    background-color: #FFF6EA;
+    background-color: white;
     padding: 20px;
 }
 .bottom-container{
     margin: 0px;
     background-color: #EBD8C3;
-    padding: 10px;
+    padding: 150px;
 }
 hr{ 
     border-style: solid; 
     border-color: #8c8b8b; 
     border-width: 1px 0 0 0; 
+}
+.container-row{
+    width: 50%;
+    background-color: yellowgreen;
+    text-align: center;
+    padding: 25%;
 }

@@ -13,9 +13,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-    res.render("template",{HomePageInfo: homePageInfo});
+    res.render("template");
 });
-
+app.get("/signup", function(req,res){
+    res.render("registration");
+});
 app.listen(3000, function(){
     console.log("Server is running on port 3000");
 });
