@@ -3,83 +3,105 @@
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <img src="https://i.pinimg.com/564x/8c/c4/84/8cc484ac0cc6ec1affec4fc2938e1464.jpg" ; class="img-fluid"
+          <img src="/css/photos/team.png" class="img-fluid"
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form action="/signup" method="post">
             <h1 class="text-center" style="padding-bottom: 2.5rem;">Registruotis</h1>
-            <!-- Name input -->
+            <!-- username input -->
             <div class="row">
               <div class="col-md-6">
                 <div class="form-outline mb-4">
-                  <% if (User.name!=="") { %>
+                  <% if (User.name!=="" ) { %>
+                    
                     <input type="text" value="<%= User.name %>" name="firstName" class="form-control form-control-lg" />
                     <label class="form-label">Vardas</label>
-                   <% }
-                   else{%>
-                    <%if(Error){%><input type="text" name="firstName" class="form-control form-control-lg error"  />
-                    <label class="form-label text-error">Įveskite vardą</label>
-                    <%}else{%><input type="text" name="firstName" class="form-control form-control-lg" />
-                    <label class="form-label text-error">Įveskite vardą</label><%}%><%}%>
+                    <% } else{%>
+
+                      <%if(Error){%><input type="text" name="firstName" class="form-control form-control-lg error" />
+                        <label class="form-label text-error">Įveskite vardą</label>
+                        <%}else{%><input type="text" name="firstName" class="form-control form-control-lg" />
+                          <label class="form-label text-error">Įveskite vardą</label>
+                          <%}%>
+                            <%}%>
                 </div>
               </div>
 
               <!-- Surname input -->
               <div class="col-md-6">
                 <div class="form-outline mb-3">
-                  <% if (User.lastname!=="") { %>
-                    <input type="text" value="<%= User.lastname %>" name="lastName" class="form-control form-control-lg" />
+                  <% if (User.lastname!=="" ) { %>
+                    <input type="text" value="<%= User.lastname %>" name="lastName"
+                      class="form-control form-control-lg" />
                     <label class="form-label">Pavardė</label>
-                    <% }
-                   else{%>
-                    <%if(Error){%> <input type="text" name="lastName" class="form-control form-control-lg error" />
-                    <label class="form-label text-error">Įveskite pavardę</label>
-                  <%}else{%><input type="text" name="lastName" class="form-control form-control-lg" />
-                  <label class="form-label text-error">Įveskite pavardę</label><%}%><%}%>
+                    <% } else{%>
+                      <%if(Error){%> <input type="text" name="lastName" class="form-control form-control-lg error" />
+                        <label class="form-label text-error">Įveskite pavardę</label>
+                        <%}else{%><input type="text" name="lastName" class="form-control form-control-lg" />
+                          <label class="form-label text-error">Įveskite pavardę</label>
+                          <%}%>
+                            <%}%>
                 </div>
               </div>
             </div>
 
             <!-- email input -->
             <div class="form-outline mb-4">
-              <% if (User.email!=="") { %>
+              <% if (User.email!=="" ) { %>
                 <input type="email" value="<%= User.email %>" name="email" class="form-control form-control-lg" />
-                <label class="form-label">Email</label>
-                <% }
-               else{%>
-                <%if(Error){%> <input type="email" name="email" class="form-control form-control-lg error" />
-                <label class="form-label text-error">Įveskite email</label>
-              <%}else{%><input type="email" name="email" class="form-control form-control-lg" />
-              <label class="form-label text-error">Įveskite email</label><%}%><%}%>
+                <label class="form-label">Email adresas</label>
+                <% } else{%>
+                  <%if(Error){%> <input type="email" name="email" class="form-control form-control-lg error" />
+                    <label class="form-label text-error">Įveskite email</label>
+                    <%}else{%><input type="email" name="email" class="form-control form-control-lg" />
+                      <label class="form-label text-error">Įveskite email</label>
+                      <%}%>
+                        <%}%>
             </div>
 
             <!-- Password input -->
             <div class="row">
               <div class="col-md-6">
-                <div class="form-outline mb-3"> 
-                  <% if (User.password!=="") { %>
-                    <input type="password" name="password" class="form-control form-control-lg" />
-                  <label class="form-label">Slaptažodis</label>
-                 <% }
-                 else{%>
-                  <%if(Error){%><input type="password" name="password" class="form-control form-control-lg error" />
-                  <label class="form-label text-error"><%=Msg%></label>
-                  <%}else{%><input type="password" name="password" class="form-control form-control-lg error" />
-                  <label class="form-label text-error"><%=Msg%></label><%}%><%}%>
+                <div class="form-outline mb-3">
+
+                  <%if(Msg==="first"){%>
+                    <input type="password" name="password" class="form-control form-control-lg error" />
+                    <label class="form-label text-error">Įveskite slaptažodį</label>
+                    <%}else if(Msg==="second" ){%>
+                      <input type="password" value="<%= User.password %>" name="password"
+                        class="form-control form-control-lg" />
+                      <label class="form-label text-error">Pakartokite slaptažodį</label>
+                      <%}else if(Msg==="both" ){%>
+                        <input type="password" value="<%= User.password %>" name="password"
+                          class="form-control form-control-lg error" />
+                        <label class="form-label text-error">Slaptažodžiai nėra vienodi</label>
+                        <% }else{%>
+                          <input type="password" name="password" class="form-control form-control-lg" />
+                          <label class="form-label">Slaptažodis</label>
+                          <%}%>
                 </div>
               </div>
 
               <!-- Password input -->
               <div class="col-md-6">
                 <div class="form-outline mb-3">
-                  <% if (User.password!=="") { %>
-                    <input type="password" name="password" class="form-control form-control-lg" />
-                  <label class="form-label">Pakartokite slaptažodį</label>
-                 <% }
-                 else{%>
-                  <%if(Error){%><input type="password" name="password" class="form-control form-control-lg error" />
-                  <%}else{%><input type="password" name="password" class="form-control form-control-lg error" /><%}%><%}%>
+
+                  <%if(Msg==="both"){%>
+                    <input type="password" value="<%= User.password2 %>" name="password2"
+                      class="form-control form-control-lg error" />
+                    <label class="form-label text-error"></label>
+                    <%}else if(Msg==="second" ){%>
+                      <input type="password" name="password2" class="form-control form-control-lg error" />
+                      <label class="form-label text-error"></label>
+                      <%}else if(Msg==="first" ){%>
+                        <input type="password" value="<%= User.password2 %>" name="password2"
+                          class="form-control form-control-lg" />
+                        <label class="form-label text-error"></label>
+                        <%}else{%>
+                          <input type="password" name="password2" class="form-control form-control-lg" />
+                          <label class="form-label">Pakartokite slaptažodį</label>
+                          <% }%>
                 </div>
               </div>
             </div>
@@ -93,5 +115,5 @@
         </div>
       </div>
     </div>
- </div>
+  </div>
   <%- include("partials/footer"); -%>

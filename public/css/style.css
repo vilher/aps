@@ -71,3 +71,21 @@ height: 100%;
 .text-error{
     color: red;
 }
+body {
+    background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  .registr{
+      padding: 100px;
+      padding-bottom: 150px;
+  }
+  .img-f{
+      background-image: url(views/photos/female.png);
+  }

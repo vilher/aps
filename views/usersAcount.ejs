@@ -1,0 +1,65 @@
+<%- include("partials/header"); -%>
+    <div class="registr">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <img src="/css/photos/female.png" width="96" height="96">
+                    </div>
+                    <form action="/signupTeacher" method="post">
+                        <div class="card-body">
+                            <h1>Dėstytojas</h1>
+                            <ul class="list-unstyled mb-4">
+                                <li>Kurti viktoriną</li>
+                                <li>Greitas įvertinimas</li>
+                                <li>Patogus viešinimas </li>
+                                <li>Stebėti dalyvius</li>
+                                <li>Stebėti reitingus</li>
+                            </ul>
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Registruotis</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135810.png" width="96" height="96">
+                    </div>
+                    <form action="/signupStudent" method="post">
+                        <div class="card-body">
+                            <h1>Studentas</h1>
+                            <div class="chip img "></div>
+                            <ul class="list-unstyled mb-4">
+                                <li>Prisijungti į viktoriną </li>
+                                <li>Mokytis pačiam</li>
+                                <li>Stebėti procesą</li>
+                            </ul>
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Registruotis</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3 ">
+                        <img src="/css/photos/education.png"
+                            width="96" height="96">
+                    </div>
+                    <form action="/play" method="post">
+                        <div class="card-body">
+                            <h1>Dalyvis</h1>
+                            <ul class="list-unstyled mb-4">
+                                <li>Prisijungti į viktoriną su gautu kodu</li>
+                            </ul>
+                            <div style=" padding-bottom: 30px">
+                                <input type="text" name="code" class="form-control form-control-lg" />
+                            </div>
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Prisijungti</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer"); -%>
