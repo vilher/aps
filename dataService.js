@@ -15,33 +15,10 @@ const con = mysql.createConnection({
 const key="lokyslokiukas";
 
 module.exports.putUser = function(where,email,name,surname,password) {
-  con.connect(function(err) {
-    if (err) throw err;
     var sql = "INSERT INTO "+ where+ "(Elektroninis_pastas, Vardas,Pavarde,Slaptazodis) VALUES ('"+email+"', '"+name+"', '"+surname+"','"+AES.encrypt(password, key) +"')";
       con.query(sql, function (err, result) {
       if (err) {throw err}
       console.log("1 record inserted");
-      return true;
     });
-  });
+    return true;
 };
-module.exports.getName = function(){
-  con.connect(function (err) {
-    con.query("SELECT * FROM users",function (err, result) {
-      if (err) throw err;
-      console.log(result[0]);
-    });
-
-  });
-
-};
-// app.get("/user",function(req,res){
-//   con.connect(function (err) {
-//     if (err) throw err;
-//     con.query("SELECT * FROM users WHERE Slapyvardis = '"+name+"'", function (err, result) {
-//       if (err) throw err;
-//       console.log(result);
-//     });
-
-//   });
-// });

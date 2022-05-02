@@ -1,0 +1,40 @@
+<%- include("partials/headerLogin"); -%>
+    <h1 class="doing">Ką nori daryti su Karinu?</h1>
+    <div class="registr">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class=" btnb card-header py-3" onClick="javascript:document.location.href='create';">
+                        <img src="/css/photos/branding.png" width="96" height="100">
+                    </div>
+                    <div class="card-body">
+                        <p>Kurti viktoriną</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="spaceBefore2 card mb-4 rounded-3 shadow-sm">
+                    <div class="btnc card-header py-3"onClick="javascript:document.location.href='share';">
+                        <img src="/css/photos/social-marketing.png" width="96" height="100">
+                    </div>
+
+                        <div class="card-body">
+                            <p>Dalintis</p>
+                            <div class="chip img "></div>
+
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class=" card mb-4 rounded-3 shadow-sm">
+                    <div class=" btna card-header py-3"onClick="javascript:document.location.href='see';">
+                        <img src="/css/photos/question.png" width="96" height="100">
+                    </div>
+                        <div class="card-body">
+                            <p>Peržiūrėti savo viktorinas</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer"); -%>

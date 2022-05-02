@@ -1,0 +1,33 @@
+<%- include("partials/headerLogin"); -%>
+<h2 class="spaceBefore doing fw-bold mb-0">Viktorinos sukūrimas</h2>
+  <div class="modal-dialog" style="margin-top: 0px;">
+    <div class="modal-content" style="border: none;">
+        <form class="/create" method="post">
+          <div class="form-floating mb-3">
+            <label>Įveskite viktorinos pavadinimą:</label>
+            <input type="text"name="name" autocomplete="off"  class="form-control rounded-4">
+          </div>
+          <label >Klausimas:</label>
+          <div class="form-floating mb-3">
+            <textarea  rows="2" cols="65"name="question"style="border-color:#ced4da"></textarea>
+              </textarea>
+          </div>
+          <label >Aprašymas:</label>
+          <div class="form-floating mb-3">
+            <textarea  rows="4" cols="65"name="comment"style="border-color:#ced4da"></textarea>
+              </textarea>
+          </div>
+          <div class="form-floating mb-3">
+            <label >Pasirinkite nuotrauką</label>
+            <form method="post" enctype="multipart/form-data" action="/upload">
+              <input type="file" name="img">
+          </div>
+          <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Pridėti klausimus</button>
+        </form>
+          <div class="form-floating mb-3"></div>
+         </form><form action="/backtoBody" method="post">
+          <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Atšaukti</button>
+         </form>
+    </div>
+  </div>
+<%- include("partials/footer"); -%>
