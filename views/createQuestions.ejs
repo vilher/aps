@@ -1,17 +1,55 @@
 <%- include("partials/headerLogin"); -%>
-<div class="featurette-divider">
+    <form action="/addAnswer" method="post">
+        <h1 class="doing spaceBefore ">Viktorina <%=Question[0].name%>
+        </h1>
+        <div class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h3><%=Question.length-1%> Klausimas:
+                        <div class="form-floating mb-3">
+                            <textarea required rows="2" cols="32re" name="question" style="border-color:#ced4da"
+                                required><%=Question[Question.length-1].question%></textarea>
+                            </textarea>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <div class="right">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading"><%=Question.name%></h2>
-        <h2 class="featurette-heading"><%=Question.question%></h2>
-        <h2 class="featurette-heading"><%=Question.img%></h2>
-        <p class="lead"><%=Question.comment%></p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                                <label>Įveskite galimą atsakymą:</label>
+                                <input required type="text" name="answer" autocomplete="off"
+                                    class="form-control rounded-4">
+                            </div>
 
-      </div>
-    </div>
-</div>
-  <%- include("partials/footer"); -%>
+                            <div class="left">
+                                <button class="w-30 btn btn-outline-primary" type="submit">Pridėti atsakymą</button>
+                            </div>
+    </form>
+    <% if(Answer.length>0){
+        Answer.forEach(function(element) { %>
+        <form action="/deleteAnswer" method="post">
+            <div class="right">
+
+                <input value="<%=element%>" type="text" name="delete" onchange="this.form.submit()" readonly="true"
+                    class="form-control rounded-4">
+
+            </div>
+            <div class="left">
+
+                <button class="w-30 btn btn-outline-primary" type="submit">Pašalinti
+                    atsakymą</button>
+            </div>
+        </form>
+    <% }) } %>
+    <form action="/saveAnswer" method="post">
+                <button class="w-30 btn btn-outline-primary" style="width: 150px;" type="submit">Kitas
+                    klausimas</button>
+            </form>
+
+            </div>
+            </div>
+            <div class="col-md-5 order-md-1" style="text-align:right;">
+                <img src="<%=Question.img%>">
+            </div>
+            </div>
+            </div>
+
+            <%- include("partials/footer"); -%>

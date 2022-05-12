@@ -106,3 +106,27 @@ body {
   .spaceBefore{
     padding-bottom: 20px;
   }
+  /* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  width: 50%;
+  position: relative;
+  left: 40%;
+  text-align: center;
+  bottom:38px;
+}
+
+/* Control the right side */
+.right {
+  width: 50%;
+}

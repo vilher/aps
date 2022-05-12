@@ -7,30 +7,50 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <form action="/login" method="post">
               <h1 class="text-center" style="padding-bottom: 2.5rem;">Prisijungti</h1>
       
   
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control form-control-lg"/>
+              <%console.log(Email+Password);%>
+              <%if(Email==="null" &&  Password==="null"){%>
+                <input type="email" name="email" class="form-control form-control-lg" required/>
               <label class="form-label" >Email adresas</label>
+              <%}
+              else if(Email==="null" && Password!=="null"){%>
+                <%console.log("123Fsde");%>
+                <input value="<%=Password%>" type="email" name="email" class="form-control form-control-lg" required/>
+                <label class="form-label" >Email adresas</label>
+                <%}
+              else{%>
+                
+                <%console.log("Fsde");%>
+                <input value="<%=Email%>" type="email" name="email" class="form-control form-control-lg error" required/>
+                <label class="form-label text-error">Tokio email nėra</label>
+              <%}%>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" id="password" class="form-control form-control-lg" />
-              <label class="form-label">Slaptažodis</label>
+             
+              <%if(Password==="null"){%>
+              <input type="password" name="password" class="form-control form-control-lg" required/>
+              <label class="form-label">Slaptazodis</label>
+              <%}
+              else{%>
+                <input type="password" name="password" class="form-control form-control-lg" required/>
+                <label class="form-label text-error">Slaptažodis neteisingas</label>
+              <%}%>
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Prisijungti</button>
+              </form>
               <p class="small fw-bold mt-2 pt-1 mb-0" style="padding-bottom: 2.5rem;">Neturite slaptažodžio? <a href="signup"
                   class="link-danger">Registruotis</a></p>
             </div>
-  
-          </form>
         </div>
       </div>
     </div>
